@@ -12,13 +12,10 @@ public class App {
 		FakeDB.displayAllMissingFlyers();
 		try {
 			FakeDB.insertReservation(new Member().memberId("1241932125")
-										         .firstName("Emrah")
-										         .lastName("PEKESEN")
-										         .pnr("XD45GT"));
+					.firstName("Emrah").lastName("PEKESEN").pnr("XD45GT"));
 		} catch (Exception e) {
 			System.out.println(e.getMessage());
-		};
-
+		}
 	}
 
 	public static void checkMissingFlyers() {
