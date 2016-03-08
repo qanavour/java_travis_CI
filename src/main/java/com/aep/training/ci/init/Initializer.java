@@ -16,7 +16,6 @@ public class Initializer {
 		FakeDB.getCheckInList().add(new Member(101,"1351545451", "Aslý", "PEKESEN","FTG56H"));
 		FakeDB.getCheckInList().add(new Member(102,"1266154515", "Kývanç", "PEKESEN","HGT43V"));
 		FakeDB.getCheckInList().add(new Member(103,"1323498784", "Haydar", "KALÇA","BNT8KL"));
-		
 	}
 
 }

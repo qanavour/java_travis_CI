@@ -1,7 +1,11 @@
 language: java
 jdk:
   - oraclejdk8
-  - oraclejdk7
-  - openjdk7
-sudo: false
-script: mvn clean verify test
+#  - oraclejdk7
+#  - openjdk7
+install: true
+sudo: require
+script: 
+  - sudo apt-get update && sudo apt-get install oracle-java8-installer
+  - java -version
+  - mvn clean verify test
