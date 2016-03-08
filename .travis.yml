@@ -4,9 +4,9 @@ jdk:
 #  - oraclejdk7
 #  - openjdk7
 before_install:
-  - sudo apt-get install codecov
+  - pip install codecov
 install: true
-sudo: require
+sudo: false
 script: 
 #  - sudo apt-get update && sudo apt-get install oracle-java8-installer
 #  - java -version
