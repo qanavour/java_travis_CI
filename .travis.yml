@@ -4,6 +4,7 @@ jdk:
 #  - oraclejdk7
 #  - openjdk7
 before_install:
+  - pip install --upgrade pip
   - pip install codecov
 install: true
 sudo: false
