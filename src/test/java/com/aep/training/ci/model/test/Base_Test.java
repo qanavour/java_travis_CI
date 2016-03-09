@@ -2,12 +2,18 @@ package com.aep.training.ci.model.test;
 
 import static org.junit.Assert.*;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.naming.InitialContext;
+
 import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;
 
 import com.aep.training.ci.fakedb.FakeDB;
+import com.aep.training.ci.init.Initializer;
 import com.aep.training.ci.model.Member;
 import com.aep.training.ci.model.MemberValidator;
 
@@ -67,5 +73,21 @@ public class Base_Test {
 		exception.expect(Exception.class);
 		FakeDB.insertMissingFlyer(member);
 		FakeDB.insertMissingFlyer(member);
+	}
+	
+	@Test
+	public void initializeFakeDBData(){
+		Initializer.init();
+		List<Member> reservationInitList = new ArrayList<Member>();
+		
+		reservationInitList.add(new Member(1001,"1241932125", "Emrah", "PEKESEN","XD45GT"));
+		reservationInitList.add(new Member(1002,"1351545451", "Aslý", "PEKESEN","FTG56H"));
+		reservationInitList.add(new Member(1003,"1266154515", "Kývanç", "PEKESEN","HGT43V"));
+		reservationInitList.add(new Member(1004,"1245655998", "Hüseyin", "KILIÇ","C124DT"));
+		reservationInitList.add(new Member(1005,"1323498784", "Haydar", "KALÇA","BNT8KL"));
+		reservationInitList.add(new Member(1006,"1659451848", "Onur", "ÞAHÝN","A124ER"));
+		reservationInitList.add(new Member(1007,"1057356465", "Hakan", "KEÇELÝOÐLU","P215RE"));
+		
+		assertEquals(reservationInitList, FakeDB.getReservationList());
 	}
 }

@@ -5,6 +5,9 @@ import com.aep.training.ci.model.Member;
 
 public class Initializer {
 	public static void init(){
+		FakeDB.getReservationList().clear();
+		FakeDB.getCheckInList().clear();
+		FakeDB.getMissingFlyersList().clear();
 		FakeDB.getReservationList().add(new Member(1001,"1241932125", "Emrah", "PEKESEN","XD45GT"));
 		FakeDB.getReservationList().add(new Member(1002,"1351545451", "Aslý", "PEKESEN","FTG56H"));
 		FakeDB.getReservationList().add(new Member(1003,"1266154515", "Kývanç", "PEKESEN","HGT43V"));
