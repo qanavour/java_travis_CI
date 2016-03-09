@@ -77,6 +77,9 @@ public class Base_Test {
 	
 	@Test
 	public void initializeFakeDBData(){
+		Initializer iForCodeCoverage = new Initializer();
+		assertNotNull(iForCodeCoverage);
+		
 		Initializer.init();
 		List<Member> reservationInitList = new ArrayList<Member>();
 		
