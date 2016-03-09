@@ -12,6 +12,7 @@ import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;
 
+import com.aep.training.ci.app.App;
 import com.aep.training.ci.fakedb.FakeDB;
 import com.aep.training.ci.init.Initializer;
 import com.aep.training.ci.model.Member;
@@ -93,4 +94,16 @@ public class Base_Test {
 		
 		assertEquals(reservationInitList, FakeDB.getReservationList());
 	}
+	
+	@Test
+	public void checkIfAppisRunningProperly(){
+		assertTrue(FakeDB.getMissingFlyersList().size()==0);
+		
+		App app = new App();
+		assertNotNull(app);
+		app.main(null);
+		
+		assertTrue(FakeDB.getMissingFlyersList().size()>0);
+	}
+	
 }
