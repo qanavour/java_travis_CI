@@ -95,6 +95,7 @@ public class Base_Test {
 		assertEquals(reservationInitList, FakeDB.getReservationList());
 	}
 	
+	@SuppressWarnings("static-access")
 	@Test
 	public void checkIfAppisRunningProperly(){
 		assertTrue(FakeDB.getMissingFlyersList().size()==0);
@@ -105,5 +106,28 @@ public class Base_Test {
 		
 		assertTrue(FakeDB.getMissingFlyersList().size()>0);
 	}
+	
+	@SuppressWarnings("static-access")
+	@Test
+	public void displayAllLists(){
+		App app = new App();
+		assertNotNull(app);
+		app.main(null);
+		
+		assertTrue(FakeDB.getMissingFlyersList().size()>0);
+		assertTrue(FakeDB.getReservationList().size()>0);
+		assertTrue(FakeDB.getCheckInList().size()>0);
+		
+		FakeDB.displayAllMissingFlyers();
+		FakeDB.displayAllReservations();
+		FakeDB.displayAllCheckIns();
+	}
+	
+	@Test
+	public void checkCastForFakeDB(){
+		exception.expect(ClassCastException.class);
+		FakeDB dbForCodeCoverage = (FakeDB) new Object();
+	}
+	
 	
 }
