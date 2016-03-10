@@ -129,7 +129,7 @@ public class Base_Test {
 		assertTrue(FakeDB.getReservationList().size() > 0);
 		assertTrue(FakeDB.getCheckInList().size() > 0);
 
-		FakeDB.displayAllMissingFlyers();
+		//FakeDB.displayAllMissingFlyers();
 		FakeDB.displayAllReservations();
 		FakeDB.displayAllCheckIns();
 
